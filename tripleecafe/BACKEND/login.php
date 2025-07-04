@@ -4,8 +4,8 @@ require 'db_connect.php';
 // $email = $_POST['email'];
 // $password = $_POST['password'];
 
-$email = $_POST['email'] ?? 'test@example.com';
-$password = $_POST['password'] ?? 'secret';
+$email = $_POST['email'];
+$password = $_POST['password'];
 
 $sql = "SELECT * FROM CUSTOMERS WHERE CUST_EMAIL = :u AND CUST_PASSWORD = :p"; // Change to your table
 $stid = oci_parse($conn, $sql);
@@ -17,9 +17,11 @@ oci_execute($stid);
 $row = oci_fetch_array($stid, OCI_ASSOC);
 
 if ($row) {
-    echo "✅ Login successful!";
+    header("Location: ../CustHome.html");
+    exit();
 } else {
     echo "❌ Invalid username or password.";
 }
+
 ?>
 

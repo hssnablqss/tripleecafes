@@ -15,8 +15,9 @@ oci_execute($stid);
 $row = oci_fetch_array($stid, OCI_ASSOC);
 
 if ($row) {
-    echo "✅ Staff login successful!";
+    header("Location: ../adminhome.html");
+    exit();
 } else {
-    echo "❌ Invalid staff credentials.";
+    echo "❌ Invalid username or password.";
 }
 ?>
