@@ -143,6 +143,23 @@
   .register-link p a:hover {
       text-decoration: underline;
   }
+
+    .emp-link {
+      font-size: .9em;
+      color: #ffff;
+      text-align: center;
+      margin: 25px 0 10px;
+  }
+
+  .emp-link p a {
+      color: #ffff;
+      text-decoration: none;
+      font-weight: 600;
+  }
+
+  .emp-link p a:hover {
+      text-decoration: underline;
+  }
   /* Footer */
   footer {
     background-image: url('../img/footerBg.jpg'); /* Path to your footer image */

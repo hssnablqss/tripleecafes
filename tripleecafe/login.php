@@ -1,25 +1,22 @@
 <?php
-$user = "CAFEUSER";
-$pass = "CAFEUSER";
-$host = "localhost:1521/FREEPDB1";
-$conn = oci_connect($user, $pass, $host);
+$email = $_POST['CUST_EMAIL'];
+$password = $_POST['CUST_PASSWORD'];
 
-$email = $_POST['email'];
-$password = $_POST['password'];
+// Mock user for testing
+$mock_email = "test@example.com";
+$mock_password = "password123";
 
-$sql = "SELECT * FROM CUSTOMERS WHERE email = :u AND password = :p"; // Change to your table
-$stid = oci_parse($conn, $sql);
+if (empty($email) || empty($password)) {
+    echo "❗ Email and password must not be empty.";
+    exit;
+}
 
-oci_bind_by_name($stid, ":u", $email);
-oci_bind_by_name($stid, ":p", $password);
-
-oci_execute($stid);
-$row = oci_fetch_array($stid, OCI_ASSOC);
-
-if ($row) {
-    echo "✅ Login successful!";
+if ($email === $mock_email && $password === $mock_password) {
+    echo "✅ Login successful (mock data)!";
+    header("Location: CustHome.html");
+exit;
+    // You can redirect or set a session here if needed
 } else {
     echo "❌ Invalid username or password.";
 }
 ?>
-
