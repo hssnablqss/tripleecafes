@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Update Your Details</title>
-    <link rel="stylesheet" href="css/adminupddetails.css">
+    <link rel="stylesheet" href="css/adminreport.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <style>
             /* Style for active cart link */
@@ -18,14 +18,13 @@
 </head>
 
 <body>
-
     <!-- TOP NAV -->
     <div class="topnav">
         <div class="nav-left">
             <img src="./img/LogoP1.png" alt="Logo" class="logo" />
             <a href="adminhome.html">Home</a>
             <a href="adminmenu.html">Menu</a>
-            <a href="adminreport.html">Report</a>
+            <a href="adminreport.html"class="active">Report</a>
 
         </div>
         <div class="nav-right">
@@ -40,50 +39,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- UPDATE FORM -->
-    <div class="wrapper">
-        <form action="">
-            <h1>Update Details</h1>
-
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="text" placeholder="Full Name" required>
-                    <i class='bx bxs-user'></i>
-                </div>
-                <div class="input-field">
-                    <input type="text" placeholder="Username" required>
-                    <i class='bx bxs-user'></i>
-                </div>
-            </div>
-
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="email" placeholder="Email" required>
-                    <i class='bx bxs-envelope'></i>
-                </div>
-                <div class="input-field">
-                    <input type="number" placeholder="Phone Number" required>
-                    <i class='bx bxs-phone'></i>
-                </div>
-            </div>
-
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="password" placeholder="Password" required>
-                    <i class='bx bxs-lock-alt'></i>
-                </div>
-                <div class="input-field">
-                    <input type="password" placeholder="Confirm Password" required>
-                    <i class='bx bxs-lock-alt'></i>
-                </div>
-            </div>
-
-            <label><input type="checkbox">I hereby declare that the above information is true and correct.</label>
-
-            <button type="submit" class="btn">Update Details</button>
-        </form>
     </div>
         <!-- <footer>
             <div class="footer-container">
@@ -114,22 +69,20 @@
                 <p>© 2025 Foodie. All rights reserved.</p>
             </div>
         </footer> -->
-            <script>
-                // Check if the current page is the Cart page
+        <script>
+            // Check if the current page is the Cart page
                 if (window.location.href.indexOf("adminupddetails.html") !== -1) {
                     // Add active class to Cart link
                     document.getElementById("user-link").classList.add("active");
                 }
 
-                // Optional: Close the dropdown if clicked outside
-        document.addEventListener('click', function(event) {
-            const isClickInside = document.querySelector('.icon-button').contains(event.target);
-            if (!isClickInside) {
-                const dropdown = document.querySelector('#userIcon .dropdown-content');
-                dropdown.style.display = 'none';
-            }
-        });
-            </script>
+            // Optional: Close the dropdown if clicked outside
+                document.addEventListener('click', function(event) {
+                    const isClickInside = document.querySelector('.icon-button').contains(event.target);
+                    if (!isClickInside) {
+                        const dropdown = document.querySelector('#userIcon .dropdown-content');
+                        dropdown.style.display = 'none';
+                    }
+                });
+        </script>
 </body>
-
-</html>

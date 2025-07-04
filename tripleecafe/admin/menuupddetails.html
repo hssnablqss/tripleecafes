@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Update Your Details</title>
-    <link rel="stylesheet" href="css/adminupddetails.css">
+    <link rel="stylesheet" href="css/updatenewmenu.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <style>
             /* Style for active cart link */
@@ -18,7 +18,6 @@
 </head>
 
 <body>
-
     <!-- TOP NAV -->
     <div class="topnav">
         <div class="nav-left">
@@ -42,49 +41,57 @@
         </div>
     </div>
 
-    <!-- UPDATE FORM -->
-    <div class="wrapper">
-        <form action="">
-            <h1>Update Details</h1>
-
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="text" placeholder="Full Name" required>
-                    <i class='bx bxs-user'></i>
-                </div>
-                <div class="input-field">
-                    <input type="text" placeholder="Username" required>
-                    <i class='bx bxs-user'></i>
-                </div>
+<div class="card-wrapper">
+    <div class="card">
+            <div class="back-btn-container">
+            <a href="adminmenu.html">
+                <button class="back-btn">Back</button>
+            </a>
+    </div>
+        <h2>Update Menu's Details</h2>
+        <form action="/submit" method="POST" enctype="multipart/form-data">
+            <div class="input-group">
+                <label for="menu-name">Order ID</label>
+                <input type="text" id="order_id" name="order_id" placeholder="Enter Order ID" required>
+            </div>            
+            <!-- Input Field 1: Menu Name -->
+            <div class="input-group">
+                <label for="menu-name">Menu Name</label>
+                <input type="text" id="menu-name" name="menu-name" placeholder="Enter Menu Name" required>
             </div>
 
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="email" placeholder="Email" required>
-                    <i class='bx bxs-envelope'></i>
-                </div>
-                <div class="input-field">
-                    <input type="number" placeholder="Phone Number" required>
-                    <i class='bx bxs-phone'></i>
-                </div>
+            <!-- Input Field 2: Menu Type -->
+            <div class="input-group">
+                <label for="menu-type">Menu Type</label>
+                <input type="text" id="menu-type" name="menu-type" placeholder="Enter Menu Type" required>
             </div>
 
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="password" placeholder="Password" required>
-                    <i class='bx bxs-lock-alt'></i>
-                </div>
-                <div class="input-field">
-                    <input type="password" placeholder="Confirm Password" required>
-                    <i class='bx bxs-lock-alt'></i>
-                </div>
+            <!-- Input Field 3: Price -->
+            <div class="input-group">
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price" placeholder="Enter Price" required>
             </div>
 
-            <label><input type="checkbox">I hereby declare that the above information is true and correct.</label>
+            <!-- Input Field 4: Description -->
+            <div class="input-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" placeholder="Enter Description" required></textarea>
+            </div>
 
-            <button type="submit" class="btn">Update Details</button>
+            <!-- File Input: Upload Image -->
+            <div class="input-group">
+                <label for="menu-image">Upload Image</label>
+                <input type="file" id="menu-image" name="menu-image" accept="image/*" required>
+            </div>
+
+            <!-- Submit Button -->
+            <a href="adminmenu.html">
+                <button type="submit" class="submit-btn">Submit</button>
+            </a>
         </form>
     </div>
+</div>
+
         <!-- <footer>
             <div class="footer-container">
                 <div class="footer-content">
@@ -114,22 +121,20 @@
                 <p>© 2025 Foodie. All rights reserved.</p>
             </div>
         </footer> -->
-            <script>
-                // Check if the current page is the Cart page
+        <script>
+            // Check if the current page is the Cart page
                 if (window.location.href.indexOf("adminupddetails.html") !== -1) {
                     // Add active class to Cart link
                     document.getElementById("user-link").classList.add("active");
                 }
 
-                // Optional: Close the dropdown if clicked outside
-        document.addEventListener('click', function(event) {
-            const isClickInside = document.querySelector('.icon-button').contains(event.target);
-            if (!isClickInside) {
-                const dropdown = document.querySelector('#userIcon .dropdown-content');
-                dropdown.style.display = 'none';
-            }
-        });
-            </script>
+            // Optional: Close the dropdown if clicked outside
+                document.addEventListener('click', function(event) {
+                    const isClickInside = document.querySelector('.icon-button').contains(event.target);
+                    if (!isClickInside) {
+                        const dropdown = document.querySelector('#userIcon .dropdown-content');
+                        dropdown.style.display = 'none';
+                    }
+                });
+        </script>
 </body>
-
-</html>

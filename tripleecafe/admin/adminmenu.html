@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Update Your Details</title>
+    <link rel="stylesheet" href="css/adminmenu.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <style>
+            /* Style for active cart link */
+            #user-link.active {
+                background-color: #f1c40f;  /* Highlight color */
+                color: #fff;
+            }
+        </style>
+</head>
+
+<body>
+    <!-- TOP NAV -->
+    <div class="topnav">
+        <div class="nav-left">
+            <img src="./img/LogoP1.png" alt="Logo" class="logo" />
+            <a href="adminhome.html">Home</a>
+            <a href="adminmenu.html"class="active">Menu</a>
+            <a href="adminreport.html">Report</a>
+
+        </div>
+        <div class="nav-right">
+            <div class="icon-button">
+                        <button class="icon-button"id="user-link" onclick="toggleDropdown()">
+                            <img src="./img/user-1.png" alt="user Icon" />
+                            <span>User</span>
+                        </button>
+                <div class="dropdown-content">
+                    <a href="adminupddetails.html">Update Details</a>
+                    <a href="adminmenu.html">Log out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="card-wrapper">
+    <div class="card">
+        <h2>List of Menu</h2>
+
+<div class="save-btn-container">
+    <!-- Filter Button Dropdown -->
+    <div class="dropdown">
+        <button class="filter-btn">Filter Menu</button>
+        <div class="dropdown-content">
+            <button class="filter-btn" onclick="filterMenuByType('Food')">Filter by Food</button>
+            <button class="filter-btn" onclick="filterMenuByType('Beverage')">Filter by Beverage</button>
+            <button class="filter-btn" onclick="filterMenuByType('Dessert')">Filter by Dessert</button>
+
+        </div>
+    </div>
+
+    <!-- Add New Menu Button -->
+    <a href="newmenu.html" class="save-btn">Add New Menu</a>
+</div>
+
+
+        <!-- Table inside the Card -->
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Order Id</th>
+                    <th>Menu Type</th>
+                    <th>Menu Name</th>
+                    <th>Menu Picture</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1123</td>
+                    <td>Food</td>
+                    <td>Beef Wrap</td>
+                    <td> <img src="../img/food3.png" alt="food1"></td>
+                    <td>Manyak Sedap</td>
+                    <td>5.00</td>
+<td>
+            <!-- Update Button -->
+            <a href="menuupddetails.html" class="save-btn">Update</a>
+            <!-- Delete Button below Update -->
+            <a href="adminmenu.html" class="save-btn delete" onclick="return confirmDelete()">Delete</a>
+
+        </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1123</td>
+                    <td>Food</td>
+                    <td>Beef Wrap</td>
+                    <td> <img src="../img/food3.png" alt="food1"></td>
+                    <td>Manyak Sedap</td>
+                    <td>5.00</td>
+<td>
+        <!-- Update Button with the 'update' class -->
+        <a href="menuupddetails.html" class="save-btn update">Update</a>
+        <!-- Delete Button with the 'delete' class -->
+        <a href="adminmenu.html" class="save-btn delete" onclick="return confirmDelete()">Delete</a>
+
+    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1123</td>
+                    <td>Beverage</td>
+                    <td>Beef Wrap</td>
+                    <td> <img src="../img/food3.png" alt="food1"></td>
+                    <td>Manyak Sedap</td>
+                    <td>5.00</td>
+<td>
+        <!-- Update Button with the 'update' class -->
+        <a href="menuupddetails.html" class="save-btn update">Update</a>
+        <!-- Delete Button with the 'delete' class -->
+        <a href="adminmenu.html" class="save-btn delete" onclick="return confirmDelete()">Delete</a>
+
+    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1123</td>
+                    <td>Food</td>
+                    <td>Beef Wrap</td>
+                    <td> <img src="../img/food3.png" alt="food1"></td>
+                    <td>Manyak Sedap</td>
+                    <td>5.00</td>
+<td>
+        <!-- Update Button with the 'update' class -->
+        <a href="menuupddetails.html" class="save-btn update">Update</a>
+        <!-- Delete Button with the 'delete' class -->
+        <a href="adminmenu.html" class="save-btn delete" onclick="return confirmDelete()">Delete</a>
+
+    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1123</td>
+                    <td>Food</td>
+                    <td>Beef Wrap</td>
+                    <td> <img src="../img/food3.png" alt="food1"></td>
+                    <td>Manyak Sedap</td>
+                    <td>5.00</td>
+<td>
+        <!-- Update Button with the 'update' class -->
+        <a href="menuupddetails.html" class="save-btn update">Update</a>
+        <!-- Delete Button with the 'delete' class -->
+        <a href="adminmenu.html" class="save-btn delete" onclick="return confirmDelete()">Delete</a>
+    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+            <!-- <footer>
+            <div class="footer-container">
+                <div class="footer-content">
+                <h3>About Us</h3>
+                <p>We are a passionate food and beverage provider!</p>
+                </div>
+                <div class="footer-content">
+                <h3>Quick Links</h3>
+                <ul class="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                </div>
+                <div class="footer-content">
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="bottom-bar">
+                <p>© 2025 Foodie. All rights reserved.</p>
+            </div>
+        </footer> -->
+        <script>
+            // Check if the current page is the Cart page
+                if (window.location.href.indexOf("adminupddetails.html") !== -1) {
+                    // Add active class to Cart link
+                    document.getElementById("user-link").classList.add("active");
+                }
+
+            // Optional: Close the dropdown if clicked outside
+                document.addEventListener('click', function(event) {
+                    const isClickInside = document.querySelector('.icon-button').contains(event.target);
+                    if (!isClickInside) {
+                        const dropdown = document.querySelector('#userIcon .dropdown-content');
+                        dropdown.style.display = 'none';
+                    }
+                });
+
+                // Function to filter menu by type
+                function filterMenuByType(type) {
+                    // Get all rows in the table (excluding the header)
+                    const rows = document.querySelectorAll('#menuTable tbody tr');
+
+                    rows.forEach(row => {
+                        // Get the type of the current row (from the 3rd column)
+                        const menuType = row.cells[2].textContent;
+
+                        // Show or hide rows based on the type
+                        if (menuType === type || type === 'All') {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                }
+                // Function to show confirmation before deleting
+                function confirmDelete() {
+                    const confirmation = confirm("Are you sure you want to delete this item?");
+                    return confirmation;  // If 'OK' is pressed, returns true (proceeds with the deletion)
+                }
+
+
+        </script>
+</body>
