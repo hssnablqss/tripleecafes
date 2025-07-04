@@ -5,13 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Update Yout Details</title>
-    <link rel="stylesheet" href="style1.css">
+    <title>Update Your Details</title>
+    <link rel="stylesheet" href="css/updatestyle.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
 
 <body>
+
+    <!-- TOP NAV -->
+    <div class="topnav">
+        <div class="nav-left">
+            <img src="./img/LogoP1.png" alt="Logo" class="logo" />
+            <a href="CustHome.html">Home</a>
+            <a href="Order.html">Order Status</a>
+        </div>
+        <div class="nav-right">
+            <a href="cart.html" class="icon-button" id="cart-link">
+                <img src="./img/cartLogo(B).png" alt="Cart Icon" />
+                <span>Cart</span>
+            </a>
+            <div class="icon-button">
+                <button class="icon-button" onclick="toggleDropdown()">
+                    <img src="./img/user-1.png" alt="user Icon" />
+                    <span>User</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="UpdateDetails.html">Update Details</a>
+                    <a href="CustHome.html">Log out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UPDATE FORM -->
     <div class="wrapper">
         <form action="">
             <h1>Update Details</h1>
@@ -30,35 +56,31 @@
             <div class="input-box">
                 <div class="input-field">
                     <input type="email" placeholder="Email" required>
-                    <i class='bx bxs-envelope' ></i>
+                    <i class='bx bxs-envelope'></i>
                 </div>
                 <div class="input-field">
                     <input type="number" placeholder="Phone Number" required>
-                    <i class='bx bxs-phone' ></i>
+                    <i class='bx bxs-phone'></i>
                 </div>
             </div>
 
             <div class="input-box">
                 <div class="input-field">
                     <input type="password" placeholder="Password" required>
-                    <i class='bx bxs-lock-alt' ></i>
+                    <i class='bx bxs-lock-alt'></i>
                 </div>
                 <div class="input-field">
                     <input type="password" placeholder="Confirm Password" required>
-                    <i class='bx bxs-lock-alt' ></i>
+                    <i class='bx bxs-lock-alt'></i>
                 </div>
             </div>
 
-            <label><input type="checkbox">I hereby declare that the above information
-                provided is true and correct.</label>
-            
+            <label><input type="checkbox">I hereby declare that the above information is true and correct.</label>
+
             <button type="submit" class="btn">Update Details</button>
-
-
         </form>
     </div>
 
 </body>
-
 
 </html>
