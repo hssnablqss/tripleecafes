@@ -350,7 +350,7 @@ a:hover {
 }
 
 .textbox {
-    background-color:#dfd0b8;
+    background: url('../img/cafeb2.jpg') no-repeat;
     border: 2px solid #ccc;
     border-radius: 12px;
     padding: 30px;
@@ -373,6 +373,28 @@ a:hover {
     margin: 0 auto;
     text-align: center;
 }
+
+.titlepage {
+    text-align: center;
+    padding: 12px 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 100%;
+}
+
+.titlepage h2 {
+    display: inline-block;
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    white-space: nowrap;
+}
+
 
 .order-table th,
 .order-table td {

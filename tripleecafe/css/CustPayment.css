@@ -1,6 +1,6 @@
 /* General Container Setup */
 html, body {
-    background-color: #dfd0b8;
+    background: url('../img/cafeb2.jpg') no-repeat;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -350,7 +350,7 @@ a:hover {
 }
 
 .textbox {
-    background-color:#dfd0b8;
+    background: url('../img/cafeb2.jpg') no-repeat;
     border: 2px solid #ccc;
     border-radius: 12px;
     padding: 30px;

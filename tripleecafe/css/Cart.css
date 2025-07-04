@@ -348,9 +348,20 @@ a:hover {
 .icon-button:hover {
     background-color: #c3aeaeb3;
 }
-
+.titlepage {
+    border-radius: 10px;
+    background-color: #ffffff;
+    /* padding: 2px; */
+    padding-left:10px;
+    padding-right: 10px;
+margin-left: auto;
+margin-right: auto;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 50px;
+}
 .textbox {
-    background-color:#dfd0b8;
+    background: url('../img/cafeb2.jpg') no-repeat;
     border: 2px solid #ccc;
     border-radius: 12px;
     padding: 30px;
