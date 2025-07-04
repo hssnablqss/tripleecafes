@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/CustIndex.css" />
+</head>
+<body>
+
+<!-- 🔝 Top Navigation -->
+<div class="topnav">
+  <div class="nav-left">
+    <img src="./img/LogoP1.png" alt="Logo" class="logo" />
+    <a href="CustHome.html"class="active">Home</a>
+    <a href="Order.html">Order Status</a>
+  </div>
+  <div class="nav-right">
+                <a href="cart.html" class="icon-button" id="cart-link">
+                    <img src="./img/cartLogo(B).png" alt="Cart Icon" />
+                    <span>Cart</span>
+                </a>
+                <div class="icon-button">
+                    <button class="icon-button" onclick="toggleDropdown()">
+                        <img src="./img/user-1.png" alt="user Icon" />
+                        <span>User</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="UpdateDetails.html">Update Details</a>
+                        <a href="CustHome.html">Log out</a>
+                    </div>
+                </div>
+  </div>
+</div>
+<div class="textbox">
+ <!-- Page Title -->
+            <h2 style="text-align: center; margin-bottom: 5px; text-decoration: underline;">Our Menu</h2>
+
+
+
+  <!-- Section Template -->
+  <div class="menu-section">
+    <h3>Beverages</h3>
+    <div class="menu-grid" id="beverages">
+      <div class="menu-item">
+        <img src="./img/food3.png">
+        <h4>Latte</h4>
+        <p>Hot latte</p>
+        <input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button>
+      </div>
+
+      <div class="menu-item"><img src="./img/food3.png"><h4>Espresso</h4><p>Strong coffee</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+      <div class="menu-item"><img src="./img/food3.png"><h4>Americano</h4><p>Bold flavor</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+      <div class="menu-item hidden-item"><img src="./img/food3.png"><h4>Cappuccino</h4><p>Foamy delight</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+      <div class="menu-item hidden-item"><img src="./img/food3.png"><h4>Vanilla Frappe</h4><p>Cold and sweet</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+      <div class="menu-item hidden-item"><img src="./img/food3.png"><h4>Caramel Macchiato</h4><p>Sweet & smooth</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+    </div>
+    <div class="show-more-container">
+      <button class="show-more-btn" onclick="toggleItems('beverages')">Show More ▼</button>
+    </div>
+  </div>
+
+  <div class="menu-section">
+    <h3>Food</h3>
+    <div class="menu-grid" id="food">
+      <div class="menu-item"><img src="./img/food3.png"><h4>Burger</h4><p>Beef patty</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+      <div class="menu-item"><img src="./img/food3.png"><h4>Sandwich</h4><p>Cheese & ham</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+      <div class="menu-item"><img src="./img/food3.png"><h4>Pasta</h4><p>Tomato sauce</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+      <div class="menu-item hidden-item"><img src="./img/food3.png"><h4>Chicken Wrap</h4><p>Spicy grilled</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+      <div class="menu-item hidden-item"><img src="./img/food3.png"><h4>Pizza</h4><p>Cheese burst</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+    </div>
+    <div class="show-more-container">
+      <button class="show-more-btn" onclick="toggleItems('food')">Show More ▼</button>
+    </div>
+  </div>
+
+  <div class="menu-section">
+    <h3>Snacks</h3>
+    <div class="menu-grid" id="snacks">
+      <div class="menu-item"><img src="./img/food3.png"><h4>Chips</h4><p>Crispy pack</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+      <div class="menu-item"><img src="./img/food3.png"><h4>Cookies</h4><p>Chocolate chip</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+      <div class="menu-item"><img src="./img/food3.png"><h4>Donut</h4><p>Glazed treat</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+      <div class="menu-item hidden-item"><img src="./img/food3.png"><h4>Muffin</h4><p>Blueberry</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+      <div class="menu-item hidden-item"><img src="./img/food3.png"><h4>Brownie</h4><p>Fudgy square</p><input type="number" min="1" value="1" class="qty-input" id="qty-Latte">
+        <button class="add-to-cart-btn" onclick="addToCart('Latte')">Add to Cart</button></div>
+    </div>
+    <div class="show-more-container">
+      <button class="show-more-btn" onclick="toggleItems('snacks')">Show More ▼</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 📎 Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-content">
+      <h3>About Us</h3>
+      <p>We are a passionate food and beverage provider!</p>
+    </div>
+    <div class="footer-content">
+      <h3>Quick Links</h3>
+      <ul class="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-content">
+      <h3>Follow Us</h3>
+      <ul class="social-icons">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <p>© 2025 Foodie. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- !-- ✅ JavaScript --> 
+<script>
+
+function toggleItems(sectionId) {
+  const section = document.getElementById(sectionId);
+  const allItems = section.querySelectorAll('.menu-item');
+  const btn = section.closest('.menu-section').querySelector('.show-more-btn');
+
+  const isExpanded = btn.textContent.includes('Less');
+
+  allItems.forEach((item, index) => {
+    if (index >= 3) {
+      item.classList.toggle('hidden-item', isExpanded); // true = hide, false = show
+    }
+  });
+
+  btn.textContent = isExpanded ? 'Show More ▼' : 'Show Less ▲';
+}
+
+// 🛒 Add to Cart Function
+function addToCart(itemName) {
+  const qtyInput = document.getElementById(`qty-${itemName}`);
+  const quantity = parseInt(qtyInput.value);
+
+  if (isNaN(quantity) || quantity <= 0) {
+    alert("Please enter a valid quantity.");
+    return;
+  }
+
+  // Simulate storing in cart
+  alert(`${quantity} x ${itemName} added to cart!`);
+}
+
+</script>
+
+
+
+</body>
+</html>
