@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: url('../img/kopikacang.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure wrapper doesn't go behind navbar */
+.wrapper {
+    margin: 120px auto 30px; /* Adjust top spacing so form is pushed below navbar */
+}
+
+.wrapper {
+    width: 750px;
+    background: rgba(255, 255, 255, .1);
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    background: #6F4E37;
+    border-radius: 10px;
+    color: #fff;
+    padding: 40px 35px 55px;
+    margin: 150px;
+    margin-left: 400px;
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.wrapper .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.input-box .input-field {
+    position: relative;
+    width: 48%;
+    height: 50px;
+    margin: 13px 0;
+}
+
+.input-box .input-field input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    outline: none;
+    font-size: 16px;
+    color: #ffff;
+    border-radius: 6px;
+    padding: 15px 15px 15px 40px;
+}
+
+.input-box .input-field input::placeholder {
+    color: #ffff;
+}
+
+.input-box .input-field i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.wrapper label {
+    display: inline-block;
+    font-size: 14.5px;
+    margin: 10px 0 23px;
+}
+
+.wrapper label input {
+    accent-color: #ffff;
+    margin-right: 5px;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #ffff;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    color: #333;
+    font-weight: 600;
+}
+
+
+/* Top Nav Bar */
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    padding: 0 30px;
+    height: 80px;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.topnav img.logo {
+    height: 120px;
+    object-fit: contain;
+}
+
+
+.nav-left a {
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 10px 12px;
+    transition: 0.3s;
+}
+
+.nav-left a:hover {
+    color: #8e8b82;
+}
+
+.nav-left a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #8e8b82;
+}
+
+.nav-right {
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.nav-btn {
+    background-color: transparent;
+    border: 1px solid #333;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.nav-btn:hover {
+    background-color: #333;
+    color: white;
+}
+
+.nav-btn.signup {
+    background-color: #8e8b82;
+    border: none;
+    color: white;
+}
+
+.nav-btn.signup:hover {
+    background-color: #6e6a5e;
+}
+
+    .icon-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #fff;
+    color: black;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.icon-button img {
+    height: 36px;
+    width: 36px;
+    object-fit: contain;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensures dropdown appears above other content */
+    border-radius: 5px;
+    margin-top: 135px; /* Adjusted margin for better visibility */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Dropdown visible when active */
+.icon-button.active .dropdown-content {
+    display: block;
+}
+
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.icon-button:hover .dropdown-content {
+    display: block;
+}
+.icon-button:hover {
+    background-color: #c3aeaeb3;
+}
+
