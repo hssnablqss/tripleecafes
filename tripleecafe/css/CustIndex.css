@@ -162,19 +162,38 @@ html, body {
     gap: 20px;
 }
 
+/* Menu Item */
 .menu-item {
     border: 1px solid #ddd;
     padding: 15px;
     text-align: center;
     background-color: #f9f9f9;
     border-radius: 6px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for zoom effect */
+    overflow: hidden; /* Hide overflowed content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow to the grid items */
 }
+
+/* Hover effect for the grid item */
+.menu-item:hover {
+    transform: scale(1.1); /* Enlarge the entire item (grid and image) */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Hover effect for the image */
+.menu-item img:hover {
+    transform: scale(1.2); /* Slightly zoom in on the image */
+}
+
 
 .menu-item img {
     width: 100%;
     height: auto;
     border-radius: 4px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
+    box-shadow: #000;
 }
+
 
 .show-more-container {
     text-align: center;
@@ -209,7 +228,7 @@ footer {
     text-decoration: none;
 }
 .textbox {
-    background: url('../img/cafeb2.jpg') no-repeat;
+    background-color: white;
     border: 2px solid #ccc;
     border-radius: 12px;
     padding: 30px;
@@ -222,29 +241,29 @@ footer {
 }
 
 .qty-input {
-  width: 60px;
-  padding: 6px;
-  margin-top: 10px;
-  margin-bottom: 8px;
-  text-align: center;
-  border: 1px solid #aaa;
-  border-radius: 6px;
-  font-size: 14px;
+    width: 60px;
+    padding: 6px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 14px;
 }
 
 .add-to-cart-btn {
-  background-color: #81cf6e;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: #81cf6e;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .add-to-cart-btn:hover {
-  background-color: #6e6a5e;
+    background-color: #6e6a5e;
 }
 
 
@@ -318,5 +337,5 @@ h3 {
 }
 
 .hidden-item {
-  display: none;
+    display: none;
 }

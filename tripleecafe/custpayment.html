@@ -1,169 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HomePage</title>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>HomePage</title>
 
-    <!-- Fonts and Styles -->
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/CustPayment.css" />
-</head>
-<body>
-    <div id="main-content" class="main-content">
-        <!-- Top Nav -->
-        <div class="topnav">
-            <div class="nav-left">
-                <img src="./img/LogoP1.png" alt="Logo" class="logo" />
-                <a href="CustHome.html">Home</a>
-                <a href="Order.html">Order Status</a>
-            </div>
-            <div class="nav-right">
-                <a href="cart.html" class="icon-button" id="cart-link">
-                    <img src="./img/cartLogo(B).png" alt="Cart Icon" />
-                    <span>Cart</span>
-                </a>
-                <div class="icon-button">
-                    <button class="icon-button" onclick="toggleDropdown()">
-                        <img src="./img/user-1.png" alt="User Icon" />
-                        <span>User</span>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="UpdateDetails.html">Update Details</a>
-                        <a href="CustHome.html">Log out</a>
+            <!-- Fonts and Styles -->
+            <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet" />
+            <link rel="stylesheet" href="css/CustPayment.css" />
+        </head>
+
+        <body>
+            <div id="main-content" class="main-content">
+                <!-- Top Nav -->
+                <div class="topnav">
+                    <div class="nav-left">
+                        <img src="./img/LogoP1.png" alt="Logo" class="logo" />
+                        <a href="CustHome.html">Home</a>
+                        <a href="Order.html">Order Status</a>
+                    </div>
+                    <div class="nav-right">
+                        <a href="cart.html" class="icon-button" id="cart-link">
+                            <img src="./img/cartLogo(B).png" alt="Cart Icon" />
+                            <span>Cart</span>
+                        </a>
+                        <div class="icon-button">
+                            <button class="icon-button" onclick="toggleDropdown()">
+                                <img src="./img/user-1.png" alt="User Icon" />
+                                <span>User</span>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="UpdateDetails.html">Update Details</a>
+                                <a href="CustHome.html">Log out</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Payment Interface -->
+        <div class="payment-wrapper">
+        <!-- Receipt Section -->
+        <div class="receipt-card">
+            <h3>Receipt Summary</h3>
+            <hr> <!-- Horizontal line here -->
+            <!-- Order Info -->
+            <div class="order-info">
+                <div class="order-left">
+                    <p><strong>Order ID:</strong> 12345678</p>
+                </div>
+                <div class="order-right">
+                    <p><strong>Order Date:</strong> July 3, 2025</p>
+                    <p><strong>Order Time:</strong> 14:30 PM</p>
+                </div>
             </div>
-        </div>
-
-        <!-- Payment Interface -->
-<div class="payment-wrapper">
-<!-- Receipt Section -->
-<div class="receipt-card">
-    <h3>Receipt Summary</h3>
-    <hr> <!-- Horizontal line here -->
-    <!-- Order Info -->
-    <div class="order-info">
-        <div class="order-left">
-            <p><strong>Order ID:</strong> 12345678</p>
-        </div>
-        <div class="order-right">
-            <p><strong>Order Date:</strong> July 3, 2025</p>
-            <p><strong>Order Time:</strong> 14:30 PM</p>
-        </div>
-    </div>
-    
-    <!-- Receipt Items -->
-    <ul class="receipt-list">
-        <li><span>Item 1</span><span>$10.00</span></li>
-        <li><span>Item 2</span><span>$8.00</span></li>
-        <li><span>Item 3</span><span>$12.00</span></li>
-    </ul>
-    
-    <!-- Total -->
-    <div class="total-section">
-        <span>Total Amount</span>
-        <span>$30.00</span>
-    </div>
-</div>
-
-
-
-
-    <!-- Payment Form -->
-    <div class="payment-container">
-        <h2>Choose Payment Method</h2>
-            <form action="Order.html" method="POST" enctype="multipart/form-data" class="payment-form" onsubmit="return confirmPayment()">
-            <label for="payment-method">Select Payment Method</label>
-            <select id="payment-method" name="paymentMethod" onchange="handlePaymentChange()" required>
-                <option value="" disabled selected>Select a method</option>
-                <option value="cash">Cash</option>
-                <option value="qr">QR Code</option>
-            </select>
-
-            <div id="cash-message" class="hidden-section">
-                <p>Please proceed to the counter to make your payment.</p>
-            </div>
-
-            <div id="attachment-upload" class="hidden-section">
-                <label for="proof">Upload Payment Proof (image/pdf)</label>
-                <input type="file" id="proof" name="paymentProof" accept=".jpg,.jpeg,.png,.pdf" />
-            </div>
-
-            <button type="submit" class="pay-btn">Confirm Payment</button>
-        </form>
-    </div>
-</div>
-
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <h3>Contact Us</h3>
-                <p>Email: Info@gmail.com</p>
-                <p>Phone: Info@gmail.com</p>
-                <p>Address: Info@gmail.com</p>
-            </div>
-            <div class="footer-content">
-                <h3>Quick Links</h3>
-                <ul class="list">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About us</a></li>
-                    <li><a href="">Menu</a></li>
-                    <li><a href="">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-content">
-                <h3>Follow Us</h3>
-                <ul class="social-icons">
-                    <li><a href="#">fab-fa-facebook</a></li>
-                    <li><a href="#">fab-fa-instagram</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="bottom-bar">
-            <p>&copy; CS230 Student. All rights preserved</p>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script>
-        // Cart link highlight
-        if (window.location.href.indexOf("cart.html") !== -1) {
-            document.getElementById("cart-link").classList.add("active");
-        }
-
-        // Handle dropdown visibility
-        function handlePaymentChange() {
-            const method = document.getElementById("payment-method").value;
-            const cashMessage = document.getElementById("cash-message");
-            const attachmentUpload = document.getElementById("attachment-upload");
-
-            cashMessage.style.display = "none";
-            attachmentUpload.style.display = "none";
-
-            if (method === "cash") {
-                cashMessage.style.display = "block";
-                document.getElementById("proof").removeAttribute("required");
-            } else if (method === "qr" || method === "online") {
-                attachmentUpload.style.display = "block";
-                document.getElementById("proof").setAttribute("required", "required");
-            }
-        }
-
-        function confirmPayment() {
-            alert("Thank you! Your order is being prepared now.");
             
-            // Allow the form to be submitted after the alert
-            setTimeout(function() {
-                window.location.href = "Order.html";  // Redirect after 2 seconds
-            }, 2000);  // Wait for 2 seconds to show the alert before redirecting
+            <!-- Receipt Items -->
+            <ul class="receipt-list">
+                <li><span>Item 1</span><span>$10.00</span></li>
+                <li><span>Item 2</span><span>$8.00</span></li>
+                <li><span>Item 3</span><span>$12.00</span></li>
+            </ul>
             
-            return true;  // Continue with the form submission
-        }
+            <!-- Total -->
+            <div class="total-section">
+                <span>Total Amount</span>
+                <span>$30.00</span>
+            </div>
+        </div>
 
-    </script>
-</body>
-</html>
+
+
+
+            <!-- Payment Form -->
+            <div class="payment-container">
+                <h2>Choose Payment Method</h2>
+                    <form action="Order.html" method="POST" enctype="multipart/form-data" class="payment-form" onsubmit="return confirmPayment()">
+                    <label for="payment-method">Select Payment Method</label>
+                    <select id="payment-method" name="paymentMethod" onchange="handlePaymentChange()" required>
+                        <option value="" disabled selected>Select a method</option>
+                        <option value="cash">Cash</option>
+                        <option value="qr">QR Code</option>
+                    </select>
+
+                    <div id="cash-message" class="hidden-section">
+                        <p>Please proceed to the counter to make your payment.</p>
+                    </div>
+
+                    <div id="attachment-upload" class="hidden-section">
+                        <label for="proof">Upload Payment Proof (image/pdf)</label>
+                        <input type="file" id="proof" name="paymentProof" accept=".jpg,.jpeg,.png,.pdf" />
+                    </div>
+
+                    <button type="submit" class="pay-btn">Confirm Payment</button>
+                </form>
+            </div>
+        </div>
+
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-content">
+                        <h3>Contact Us</h3>
+                        <p>Email: Info@gmail.com</p>
+                        <p>Phone: Info@gmail.com</p>
+                        <p>Address: Info@gmail.com</p>
+                    </div>
+                    <div class="footer-content">
+                        <h3>Quick Links</h3>
+                        <ul class="list">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">About us</a></li>
+                            <li><a href="">Menu</a></li>
+                            <li><a href="">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-content">
+                        <h3>Follow Us</h3>
+                        <ul class="social-icons">
+                            <li><a href="#">fab-fa-facebook</a></li>
+                            <li><a href="#">fab-fa-instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bottom-bar">
+                    <p>&copy; CS230 Student. All rights preserved</p>
+                </div>
+            </footer>
+
+            <!-- Scripts -->
+            <script>
+                // Cart link highlight
+                if (window.location.href.indexOf("cart.html") !== -1) {
+                    document.getElementById("cart-link").classList.add("active");
+                }
+
+                // Handle dropdown visibility
+                function handlePaymentChange() {
+                    const method = document.getElementById("payment-method").value;
+                    const cashMessage = document.getElementById("cash-message");
+                    const attachmentUpload = document.getElementById("attachment-upload");
+
+                    cashMessage.style.display = "none";
+                    attachmentUpload.style.display = "none";
+
+                    if (method === "cash") {
+                        cashMessage.style.display = "block";
+                        document.getElementById("proof").removeAttribute("required");
+                    } else if (method === "qr" || method === "online") {
+                        attachmentUpload.style.display = "block";
+                        document.getElementById("proof").setAttribute("required", "required");
+                    }
+                }
+
+                function confirmPayment() {
+                    alert("Thank you! Your order is being prepared now.");
+                    
+                    // Allow the form to be submitted after the alert
+                    setTimeout(function() {
+                        window.location.href = "Order.html";  // Redirect after 2 seconds
+                    }, 2000);  // Wait for 2 seconds to show the alert before redirecting
+                    
+                    return true;  // Continue with the form submission
+                }
+
+            </script>
+        </body>
+    </html>

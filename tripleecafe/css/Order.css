@@ -82,48 +82,6 @@ html, body {
     background-color: #6e6a5e;
 }
 
-/* Sidebar */
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    overflow-x: hidden;
-    transition: 0.3s;
-    padding-top: 60px;
-    z-index: 999;
-}
-
-.sidebar a {
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidebar a:hover {
-    background-color: #575757;
-}
-
-/* Sidebar toggle button */
-.menu-toggle {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-}
-
-.menu-toggle button {
-    background-color: transparent;
-    border: none;
-    color: #333;
-    font-size: 24px;
-    cursor: pointer;
-}
-
 /* Footer */
 footer {
     background-color: #8e8b82;
@@ -259,31 +217,6 @@ a:hover {
     flex-direction: column;
 }
 
-.Sidebarlogo {
-    width: 80px;   /* Adjust the size of the logo */
-    height: 80px;  /* Make it a square to form a circle */
-    border-radius: 50%;  /* This ensures the logo is circular */
-    background-color: #fff;  /* White background */
-    padding: 10px;  /* Add some padding around the logo */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Optional shadow for effect */
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    object-fit: contain;  /* Ensures the image fits within the circle */
-    align-items: center;
-}
-
-.sidebarClass{
-    padding: 20px;
-    /* align-items: center; */
-}
-
-.sidebarClass span {
-    font-size: 18px; /* Adjust as necessary */
-    font-weight: 500;
-    color: white; /* Change the color to fit your design */
-    text-align: center;
-    }
-
     .icon-button {
     display: flex;
     align-items: center;
@@ -352,7 +285,6 @@ a:hover {
 .textbox {
     background: url('../img/cafeb2.jpg') no-repeat;
     border: 2px solid #ccc;
-    border-radius: 12px;
     padding: 30px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
@@ -381,7 +313,7 @@ a:hover {
     border-radius: 12px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    max-width: 100%;
+    max-width: 30%;
 }
 
 .titlepage h2 {
