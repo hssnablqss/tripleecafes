@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Update Your Details</title>
+    <link rel="stylesheet" href="css/ordersdetails.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Style for active cart link */
+        #user-link.active {
+            background-color: #f1c40f;  /* Highlight color */
+            color: #fff;
+        }
+
+        /* Style for Save Button */
+        .save-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .save-btn:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        /* Align the save button to the right */
+        .receipt-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative; /* Allow absolute positioning of the button */
+        }
+
+        .save-btn-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .order-status {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- TOP NAV -->
+    <div class="topnav">
+        <div class="nav-left">
+            <img src="./img/LogoP1.png" alt="Logo" class="logo" />
+            <a href="adminhome.html">Home</a>
+            <a href="adminmenu.html" class="active">Menu</a>
+            <a href="adminreport.html">Report</a>
+        </div>
+        <div class="nav-right">
+            <div class="icon-button">
+                <button class="icon-button" id="user-link" onclick="toggleDropdown()">
+                    <img src="./img/user-1.png" alt="user Icon" />
+                    <span>User</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="adminupddetails.html">Update Details</a>
+                    <a href="adminmenu.html">Log out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Interface -->
+    <div class="payment-wrapper">
+        <!-- Receipt Section -->
+        <div class="receipt-card">
+            <h3>Order's Details</h3>
+            <hr> <!-- Horizontal line here -->
+            
+            <!-- Order Info -->
+            <div class="order-info">
+                <div class="order-left">
+                    <p><strong>Order ID:</strong> 12345678</p>
+                    <p class="order-status"><strong>Order Status:</strong> Preparing</p> <!-- Current Order Status -->
+                </div>
+                <div class="order-right">
+                    <p><strong>Order Date:</strong> July 3, 2025</p>
+                    <p><strong>Order Time:</strong> 14:30 PM</p>
+                </div>
+            </div>
+            
+            <!-- Receipt Items -->
+            <ul class="receipt-list">
+                <li><span>Menu</span><span>Price</span></li>
+                <li><span>Cake Harum Manis</span><span>$10.00</span></li>
+                <li><span>Peach Tea</span><span>$8.00</span></li>
+                <li><span>Fries</span><span>$12.00</span></li>
+            </ul>
+            
+            <!-- Total with Status Dropdown -->
+            <div class="total-section">
+                <span>Status</span>
+                <!-- Dropdown for status selection -->
+                <select class="status-dropdown">
+                    <option value="preparing" selected>Preparing</option>
+                    <option value="finished">Finished</option>
+                    <option value="cancelled">Cancelled</option>
+                    <option value="shipped">Shipped</option>
+                </select>
+            </div>
+
+            <!-- Save Button aligned to the right -->
+            <div class="save-btn-container">
+                <a href="adminhome.html" class="save-btn">Save</a> <!-- Link to the save page -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if the current page is the Cart page
+        if (window.location.href.indexOf("adminupddetails.html") !== -1) {
+            // Add active class to Cart link
+            document.getElementById("user-link").classList.add("active");
+        }
+
+        // Optional: Close the dropdown if clicked outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = document.querySelector('.icon-button').contains(event.target);
+            if (!isClickInside) {
+                const dropdown = document.querySelector('#userIcon .dropdown-content');
+                dropdown.style.display = 'none';
+            }
+        });
+
+        document.querySelector('.status-dropdown').addEventListener('change', function() {
+            const status = this.value;  // Get the selected status
+            const orderId = document.querySelector('.order-info .order-left p strong').textContent.trim().split(":")[1].trim();
+
+            // Example: You can log or send the status and orderId to the backend here
+            console.log(`Order ID: ${orderId}, New Status: ${status}`);
+            
+            // For example, use an AJAX request to update the backend
+            // fetch('/update-status', { method: 'POST', body: { orderId, status } });
+        });
+    </script>
+</body>
+
+</html>
