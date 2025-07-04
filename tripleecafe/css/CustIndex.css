@@ -1,6 +1,6 @@
 /* General Container Setup */
 html, body {
-    background: url('../img/cafeb2.jpg') repeat;
+    background: url('../img/BgMenu.jpg') no-repeat;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -205,28 +205,6 @@ html, body {
     font-size: 14px;
     cursor: pointer;
 }
-
-/* Footer */
-footer {
-    background-color: #8e8b82;
-    color: #fff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer-container {
-    max-width: 1140px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.footer-content {
-    width: 33.3%;
-    color: #fff;
-    text-decoration: none;
-}
 .textbox {
     background-color: white;
     border: 2px solid #ccc;
@@ -239,18 +217,6 @@ footer {
     backdrop-filter: blur(40);
 
 }
-
-.qty-input {
-    width: 60px;
-    padding: 6px;
-    margin-top: 10px;
-    margin-bottom: 8px;
-    text-align: center;
-    border: 1px solid #aaa;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
 .add-to-cart-btn {
     background-color: #81cf6e;
     color: white;
@@ -273,41 +239,147 @@ h3 {
     text-align: center;
 }
 
+
+.qty-input {
+    width: 60px;
+    padding: 6px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+
+/* Footer */
+footer {
+  background-image: url('../img/footerBg.jpg'); /* Path to your footer image */
+  background-size: cover; /* Ensure the image covers the entire footer */
+  background-position: center center; /* Center the image */
+  padding: 40px 0;
+  color: white;
+  position: relative;
+}
+
+/* Footer Container */
+.footer-container {
+  max-width: 1140px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Footer Content */
+.footer-content {
+  width: 30%;
+  padding: 10px;
+  text-align: center; /* Centers the text inside the footer content */
+}
+
+/* Center the list inside the "Quick Links" section */
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+  display: flex; /* Flexbox will align the items */
+  justify-content: center; /* Horizontally center the list items */
+  flex-direction: column; /* Stack list items vertically */
+  gap: 10px; /* Add space between links */
+}
+
+/* Footer Links */
+.footer-content ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal; /* Optional: Adjust text weight */
+  transition: color 0.3s ease;
+}
+
+/* On hover, underline the links and change color */
+.footer-content ul li a:hover {
+  text-decoration: underline;
+  color: #f39c12; /* Golden color on hover */
+}
+
+
+.footer-content h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
 .footer-content p {
-    width: 190px;
-    margin: auto;
-    padding: 7px;
+  font-size: 16px;
 }
 
 .footer-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-content ul li {
+  margin: 10px 0;
+}
+
+.footer-content ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.footer-content ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons li a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.social-icons li a:hover {
+  color: #f1c40f;
+}
+
+/* Bottom Bar */
+.bottom-bar {
+  background-color: rgba(0, 0, 0, 0.7); /* Darken the background */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+/* Hover effect for links */
+.list li a:hover {
+  color: #f39c12; /* Golden color on hover */
+  font-weight: bold;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
     text-align: center;
+  }
+
+  .footer-content {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
 }
 
-.list {
-    padding: 0;
-}
-
-.list li {
-    list-style-type: none;
-    padding: 7px;
-    position: relative;
-}
-
-.list li::before {
-    content: '';
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 100%;
-    width: 0;
-    height: 2px;
-    background: #000;
-    transition-duration: 0.5s;
-}
-
-.list li:hover::before {
-    width: 70px;
-}
 
 .show-more-btn {
     padding: 12px 24px;

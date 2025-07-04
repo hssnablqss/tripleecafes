@@ -236,110 +236,127 @@ html, body {
     }
 }
 
-footer{
-    background-color: #8e8b82;
-    color: #fff;
-    /* padding: 40px 0; */
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
 
-.footer-container {
+    /* Footer */
+    footer {
+    background-image: url('../img/footerBg.jpg'); /* Path to your footer image */
+    background-size: cover; /* Ensure the image covers the entire footer */
+    background-position: center center; /* Center the image */
+    padding: 40px 0;
+    color: white;
+    position: relative;
+    }
+
+    /* Footer Container */
+    .footer-container {
     max-width: 1140px;
     margin: auto;
     display: flex;
-    justify-content: center;
-}
+    justify-content: space-between;
+    }
 
-.footer-content{
-    width: 33.3%;
-}
+    /* Footer Content */
+    .footer-content {
+    width: 30%;
+    padding: 10px;
+    text-align: center; /* Centers the text inside the footer content */
+    }
 
-h3{
-    font-size: 28px;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.footer-content p{
-    width: 190px;
-    margin: auto;
-    padding: 7px;
-}
-
-.footer-content ul{
-    text-align: center;
-}
-
-.list{
+    /* Center the list inside the "Quick Links" section */
+    .footer-content ul {
+    list-style: none;
     padding: 0;
-}
+    display: flex; /* Flexbox will align the items */
+    justify-content: center; /* Horizontally center the list items */
+    flex-direction: column; /* Stack list items vertically */
+    gap: 10px; /* Add space between links */
+    }
 
-.list li{
-    width: auto;
-    text-align: center;
-    list-style-type: none;
-    padding: 7px;
-    position: relative;
-}
-
-.list li::before{
-    content:'';
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 100%;
-    width: 0;
-    height: 2px;
-    background: #000;
-    transition-duration: .5s;
-}
-
-.list li:hover::before{
-    width: 70px;
-}
-
-.social-icons{
-    text-align: center;
-    padding: 0;
-}
-
-.social-icons li{
-    display: inline-block;
-    text-align: center;
-    padding: 5px;
-}
-
-.social-icons i{
-    color: #f2f2f2;
-    font-size: 25 px;
-}
-
-a{
+    /* Footer Links */
+    .footer-content ul li a {
+    color: white;
     text-decoration: none;
-}
+    font-size: 16px;
+    font-weight: normal; /* Optional: Adjust text weight */
+    transition: color 0.3s ease;
+    }
 
-a:hover{
-    color: #000;
-}
+    /* On hover, underline the links and change color */
+    .footer-content ul li a:hover {
+    text-decoration: underline;
+    color: #f39c12; /* Golden color on hover */
+    }
 
-.social-icons i:hover{
-    color: #000;
-}
 
-.bottom-bar {
-    background: #6e6a5e; /* more contrast than #dfd0b8 */
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-    border-top: 1px solid #444;
-}
+    .footer-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    }
 
-.bottom-bar p {
-    color: #ffffff;
-    margin: 0;
-    font-size: 15px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-}
+    .footer-content p {
+    font-size: 16px;
+    }
+
+    .footer-content ul {
+    list-style: none;
+    padding: 0;
+    }
+
+    .footer-content ul li {
+    margin: 10px 0;
+    }
+
+    .footer-content ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    }
+
+    .footer-content ul li a:hover {
+    text-decoration: underline;
+    }
+
+    .social-icons{
+        text-align: center;
+        padding: 0;
+    }
+
+    .social-icons li{
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .social-icons i{
+        color: #f2f2f2;
+        font-size: 25 px;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    a:hover{
+        color: #000;
+    }
+
+    .social-icons i:hover{
+        color: #000;
+    }
+
+    .bottom-bar {
+        background: #6e6a5e; /* more contrast than #dfd0b8 */
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+        border-top: 1px solid #444;
+    }
+
+    .bottom-bar p {
+        color: #ffffff;
+        margin: 0;
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+    }

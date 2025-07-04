@@ -1,145 +1,255 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+  @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-/* Reset white margins globally */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+  /* Reset white margins globally */
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+  }
 
-html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
+  html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+  }
 
-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background: url('../img/bgkopi.jpg');
-    background-size: cover;
-    background-position: center;
-}
+  section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background: url('../img/bgkopi.jpg');
+      background-size: cover;
+      background-position: center;
+  }
 
-.login-box {
+  .login-box {
+      position: relative;
+      width: 400px;
+      height: 450px;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, .5);
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(50px);
+  }
+
+  h2 {
+      font-size: 2em;
+      color: #ffff;
+      text-align: center;
+  }
+
+  .input-box {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      margin: 20px 0;
+      border-bottom: 2px solid #ccc;
+  }
+
+  .input-box label {
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      font-size: 0.95em;
+      color: #ffff;
+      pointer-events: none;
+      transition: .5s;
+  }
+
+  .input-box input:focus ~ label,
+  .input-box input:valid ~ label {
+      top: -10px;
+      font-size: 0.8em;
+  }
+
+  .input-box input {
+      width: 100%;
+      height: 40px;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 1em;
+      color: #ffff;
+      padding: 0 35px 0 5px; 
+  }
+
+  .input-box .icon {
+      position: absolute;
+      right: 8px;
+      color: #ffff;
+      font-size: 1.2em;
+      line-height: 57px; 
+  }
+
+  .remember-forgot {
+      margin: -15px 0 15px;
+      font-size: .9em;
+      color: #ffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: space-between;
+  }
+
+  .remember-forgot label input {
+      margin-right: px;
+  }
+
+  .remember-forgot a {
+      color: #ffff;
+      text-decoration: none;
+  }
+
+  .remember-forgot a:hover {
+      text-decoration: underline;
+  }
+
+  button {
+      width: 100%;
+      height: 40px;
+      background: #dfd0b8;
+      border: none;
+      outline: none;
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 1em;
+      color: #222831;
+      font-weight: 500;
+  }
+
+  .register-link {
+      font-size: .9em;
+      color: #ffff;
+      text-align: center;
+      margin: 25px 0 10px;
+  }
+
+  .register-link p a {
+      color: #ffff;
+      text-decoration: none;
+      font-weight: 600;
+  }
+
+  .register-link p a:hover {
+      text-decoration: underline;
+  }
+  /* Footer */
+  footer {
+    background-image: url('../img/footerBg.jpg'); /* Path to your footer image */
+    background-size: cover; /* Ensure the image covers the entire footer */
+    background-position: center center; /* Center the image */
+    padding: 40px 0;
+    color: white;
     position: relative;
-    width: 400px;
-    height: 450px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 20px;
+  }
+
+  /* Footer Container */
+  .footer-container {
+    max-width: 1140px;
+    margin: auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(50px);
-}
-
-h2 {
-    font-size: 2em;
-    color: #ffff;
-    text-align: center;
-}
-
-.input-box {
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    margin: 20px 0;
-    border-bottom: 2px solid #ccc;
-}
-
-.input-box label {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    font-size: 0.95em;
-    color: #ffff;
-    pointer-events: none;
-    transition: .5s;
-}
-
-.input-box input:focus ~ label,
-.input-box input:valid ~ label {
-    top: -10px;
-    font-size: 0.8em;
-}
-
-.input-box input {
-    width: 100%;
-    height: 40px;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    color: #ffff;
-    padding: 0 35px 0 5px; 
-}
-
-.input-box .icon {
-    position: absolute;
-    right: 8px;
-    color: #ffff;
-    font-size: 1.2em;
-    line-height: 57px; 
-}
-
-.remember-forgot {
-    margin: -15px 0 15px;
-    font-size: .9em;
-    color: #ffff;
-    display: flex;
-    align-items: center;
-    gap: 8px;
     justify-content: space-between;
-}
+  }
 
-.remember-forgot label input {
-    margin-right: px;
-}
+  /* Footer Content */
+  .footer-content {
+    width: 30%;
+    padding: 10px;
+    text-align: center; /* Centers the text inside the footer content */
+  }
 
-.remember-forgot a {
-    color: #ffff;
+  /* Center the list inside the "Quick Links" section */
+  .footer-content ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Flexbox will align the items */
+    justify-content: center; /* Horizontally center the list items */
+    flex-direction: column; /* Stack list items vertically */
+    gap: 10px; /* Add space between links */
+  }
+
+  /* Footer Links */
+  .footer-content ul li a {
+    color: white;
     text-decoration: none;
-}
+    font-size: 16px;
+    font-weight: normal; /* Optional: Adjust text weight */
+    transition: color 0.3s ease;
+  }
 
-.remember-forgot a:hover {
+  /* On hover, underline the links and change color */
+  .footer-content ul li a:hover {
     text-decoration: underline;
-}
+    color: #f39c12; /* Golden color on hover */
+  }
 
-button {
-    width: 100%;
-    height: 40px;
-    background: #dfd0b8;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    cursor: pointer;
-    font-size: 1em;
-    color: #222831;
-    font-weight: 500;
-}
 
-.register-link {
-    font-size: .9em;
-    color: #ffff;
+  .footer-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  .footer-content p {
+    font-size: 16px;
+  }
+
+  .footer-content ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-content ul li {
+    margin: 10px 0;
+  }
+
+  .footer-content ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .footer-content ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* Social Icons */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+
+  .social-icons li a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  .social-icons li a:hover {
+    color: #f1c40f;
+  }
+
+  /* Bottom Bar */
+  .bottom-bar {
+    background-color: rgba(0, 0, 0, 0.7); /* Darken the background */
+    color: white;
     text-align: center;
-    margin: 25px 0 10px;
-}
+    padding: 10px 0;
+    font-size: 14px;
+  }
 
-.register-link p a {
-    color: #ffff;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.register-link p a:hover {
-    text-decoration: underline;
-}
+  /* Hover effect for links */
+  .list li a:hover {
+    color: #f39c12; /* Golden color on hover */
+    font-weight: bold;
+  }

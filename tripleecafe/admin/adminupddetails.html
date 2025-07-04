@@ -8,6 +8,13 @@
     <title>Update Your Details</title>
     <link rel="stylesheet" href="css/adminupddetails.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <style>
+            /* Style for active cart link */
+            #user-link.active {
+                background-color: #f1c40f;  /* Highlight color */
+                color: #fff;
+            }
+        </style>
 </head>
 
 <body>
@@ -25,10 +32,10 @@
                 <span>Cart</span>
             </a>
             <div class="icon-button">
-                <button class="icon-button" onclick="toggleDropdown()">
-                    <img src="./img/user-1.png" alt="user Icon" />
-                    <span>User</span>
-                </button>
+                        <button class="icon-button"id="user-link" onclick="toggleDropdown()">
+                            <img src="./img/user-1.png" alt="user Icon" />
+                            <span>User</span>
+                        </button>
                 <div class="dropdown-content">
                     <a href="UpdateDetails.html">Update Details</a>
                     <a href="CustHome.html">Log out</a>
@@ -80,7 +87,22 @@
             <button type="submit" class="btn">Update Details</button>
         </form>
     </div>
+            <script>
+                // Check if the current page is the Cart page
+                if (window.location.href.indexOf("adminupddetails.html") !== -1) {
+                    // Add active class to Cart link
+                    document.getElementById("user-link").classList.add("active");
+                }
 
+                // Optional: Close the dropdown if clicked outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = document.querySelector('.icon-button').contains(event.target);
+            if (!isClickInside) {
+                const dropdown = document.querySelector('#userIcon .dropdown-content');
+                dropdown.style.display = 'none';
+            }
+        });
+            </script>
 </body>
 
 </html>

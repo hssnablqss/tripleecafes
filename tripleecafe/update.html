@@ -86,13 +86,50 @@
                     <button type="submit" class="btn">Update Details</button>
                 </form>
             </div>
-
+                <footer>
+                    <div class="footer-container">
+                        <div class="footer-content">
+                            <h3>About Us</h3>
+                            <p>We are a passionate food and beverage provider!</p>
+                        </div>
+                        <div class="footer-content">
+                            <h3>Quick Links</h3>
+                            <ul class="list">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="menu.html">Menu</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-content">
+                            <h3>Follow Us</h3>
+                            <ul class="social-icons">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bottom-bar">
+                        <p>© 2025 Foodie. All rights reserved.</p>
+                    </div>
+                </footer>
             <script>
                 // Check if the current page is the Cart page
                 if (window.location.href.indexOf("update.html") !== -1) {
                     // Add active class to Cart link
                     document.getElementById("user-link").classList.add("active");
                 }
+
+                // Optional: Close the dropdown if clicked outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = document.querySelector('.icon-button').contains(event.target);
+            if (!isClickInside) {
+                const dropdown = document.querySelector('#userIcon .dropdown-content');
+                dropdown.style.display = 'none';
+            }
+        });
+        
             </script>
 
         </body>
