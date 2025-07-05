@@ -12,58 +12,59 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('../img/kopikacang.jpg') no-repeat;
-    background-size: cover;
+    background: url('../img/kopikacang.jpg') no-repeat center center/cover;
 }
 
 .wrapper {
     width: 750px;
-    background: rgba(255, 255, 255, .1);
+    background: #6F4E37;
     border: 2px solid rgba(255, 255, 255, .2);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    background: #6F4E37;
     border-radius: 10px;
     color: #fff;
-    padding: 40px 35px 55px;
-    margin: 0 10px;
+    padding: 40px 35px 50px;
+    margin: 20px;
 }
 
 .wrapper h1 {
     font-size: 36px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-.wrapper .input-box {
+.input-box {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
-.input-box .input-field {
+.input-field {
     position: relative;
     width: 48%;
-    height: 50px;
-    margin: 13px 0;
+    margin-bottom: 25px;
 }
 
-.input-box .input-field input {
+.input-field input[type="text"],
+.input-field input[type="email"],
+.input-field input[type="number"],
+.input-field input[type="password"],
+.input-field input[type="date"] {
     width: 100%;
-    height: 100%;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    outline: none;
-    font-size: 16px;
-    color: #ffff;
-    border-radius: 6px;
     padding: 15px 15px 15px 40px;
+    border-radius: 6px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
 }
 
-.input-box .input-field input::placeholder {
-    color: #ffff;
+.input-field input::placeholder {
+    color: #fff;
 }
 
-.input-box .input-field i {
+.input-field i {
     position: absolute;
     left: 15px;
     top: 50%;
@@ -71,25 +72,42 @@ body {
     font-size: 20px;
 }
 
-.wrapper label {
-    display: inline-block;
+.gender-label,
+.date-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.gender-options {
+    display: flex;
+    gap: 15px;
     font-size: 14.5px;
-    margin: 10px 0 23px;
+    color: #fff;
+    padding-left: 5px;
 }
 
-.wrapper label input {
-    accent-color: #ffff;
-    margin-right: 5px;
+.wrapper > label {
+    display: block;
+    font-size: 14.5px;
+    margin: 10px 0 25px;
+    line-height: 1.5;
 }
 
-.wrapper .btn {
+.wrapper label input[type="checkbox"] {
+    accent-color: #fff;
+    margin-right: 8px;
+}
+
+.btn {
     width: 100%;
     height: 45px;
-    background: #ffff;
+    background: #fff;
+    color: #333;
     border: none;
     border-radius: 6px;
+    font-weight: 600;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     cursor: pointer;
-    color: #333;
-    font-weight: 600;
+    margin-top: 10px;
 }
