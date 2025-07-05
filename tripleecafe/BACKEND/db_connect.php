@@ -1,7 +1,7 @@
 <?php
-$user = "cafeuser";
-$pass = "cafepassword";
-$host = "localhost/XEPDB1";
+$user = "CAFEUSER";
+$pass = "CAFEUSER";
+$host = "localhost/FREEPDB1";
 
 $conn = oci_connect($user, $pass, $host);
 

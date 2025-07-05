@@ -8,54 +8,78 @@
         <title>Sign Up</title>
         <link rel="stylesheet" href="css/style1.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
     </head>
 
     <body>
         <div class="wrapper">
-            <form action="">
+            <form action="BACKEND/signup.php" method="POST">
                 <h1>Sign Up</h1>
-
+                
                 <div class="input-box">
                     <div class="input-field">
-                        <input type="text" placeholder="Full Name" required>
-                        <i class='bx bxs-user'></i>
-                    </div>
-                    <div class="input-field">
-                        <input type="text" placeholder="Username" required>
+                        <input type="text" name="fullname" id="fullname" placeholder="Full Name" required>
                         <i class='bx bxs-user'></i>
                     </div>
                 </div>
 
                 <div class="input-box">
                     <div class="input-field">
-                        <input type="email" placeholder="Email" required>
+                        <input type="email" name="email" id="email" placeholder="Email" required>
                         <i class='bx bxs-envelope' ></i>
                     </div>
                     <div class="input-field">
-                        <input type="number" placeholder="Phone Number" required>
+                        <input type="number" name="phone" id="phone" placeholder="Phone Number" required>
                         <i class='bx bxs-phone' ></i>
                     </div>
                 </div>
 
                 <div class="input-box">
                     <div class="input-field">
-                        <input type="password" placeholder="Password" required>
+                        <input type="password" name="password" placeholder="Password" required>
                         <i class='bx bxs-lock-alt' ></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" placeholder="Confirm Password" required>
+                        <input type="password" name="conpass" placeholder="Confirm Password" required>
                         <i class='bx bxs-lock-alt' ></i>
+                        <div id="password-error" style="color: red; font-size: 13px; margin-top: 5px; display: none;">
+                            Passwords do not match.
+                        </div>
                     </div>
                 </div>
 
-                <label><input type="checkbox">I hereby declare that the above information
+                <label><input type="checkbox" name="declare">I hereby declare that the above information
                     provided is true and correct.</label>
-                
-                <a href="login.html">
-                    <button type="button" class="btn">Sign Up</button>
-                </a>
+                    <button type="submit" class="btn">Sign Up</button>
+
             </form>
         </div>
     </body>
 </html>
+
+<script>
+    // Get query parameters from URL
+    const params = new URLSearchParams(window.location.search);
+
+    function getQueryParam(key) {
+        return params.get(key);
+    }
+
+    // Refill form fields
+    const nameField = document.getElementById("fullname");
+    const emailField = document.getElementById("email");
+    const phoneField = document.getElementById("phone");
+
+    if (nameField) nameField.value = getQueryParam("name") || "";
+    if (emailField) emailField.value = getQueryParam("email") || "";
+    if (phoneField) phoneField.value = getQueryParam("phone") || "";
+
+    // Show password mismatch error
+    if (getQueryParam("error") === "password_mismatch") {
+        const errorDiv = document.getElementById("password-error");
+        if (errorDiv) {
+            errorDiv.style.display = "block";
+        }
+    }
+</script>
+
+
