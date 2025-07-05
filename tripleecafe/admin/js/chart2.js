@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const data = [12, 19, 3, 5, 2, 3];
   const total = data.reduce((a, b) => a + b, 0);
 
+  
+
   new Chart(ctx2, {
     type: 'doughnut',
     data: {

@@ -28,7 +28,7 @@ body {
     padding: 2rem;
     border: 1px solid #f49131;
     border-radius: 1rem;
-    background: #251c35;
+    background: #e7dccb;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.8);
 }
 
@@ -191,4 +191,21 @@ body {
 .icon-button:hover {
     background-color: #c3aeaeb3;
 }
+
+.print-btn {
+    margin-top: 1rem;
+    padding: 8px 16px;
+    background-color: #f49131;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.print-btn:hover {
+    background-color: #d9790d;
+}
+
 

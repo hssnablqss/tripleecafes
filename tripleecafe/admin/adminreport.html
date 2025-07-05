@@ -44,12 +44,14 @@
     <body>
             <div class="container">
             <div class="chart">
-                <canvas id="barchart" width="300" height="300"></canvas>
+                <canvas id="barchart" width="400" height="400"></canvas>
                 <div id="bar-summary" class="chart-summary"></div>
+                <button onclick="printChart('barchart')" class="print-btn">Print Bar Chart</button>
             </div>
 
             <div class="chart">
-                <canvas id="doughnut" width="300" height="300"></canvas>
+                <canvas id="doughnut" width="450" height="450"></canvas>
+                <button onclick="printChart('doughnut')" class="print-btn">Print Doughnut Chart</button>
             </div>
         </div>
 
@@ -102,4 +104,27 @@
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
         <script src="js/chart1.js"></script>
         <script src="js/chart2.js"></script>
+        <script>
+            function printChart(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const summary = canvas.parentElement.querySelector('.chart-summary');
+            const win = window.open('', '', 'width=800,height=600');
+            win.document.write('<html><head><title>Print Chart</title></head><body style="text-align:center; font-family:Poppins,sans-serif;">');
+
+            // Add chart image
+            win.document.write('<img src="' + canvas.toDataURL() + '" style="max-width:100%; height:auto;"/>');
+
+            // Add summary if it exists
+            if (summary) {
+            win.document.write('<div style="margin-top: 20px; font-size: 16px;">' + summary.innerHTML + '</div>');
+            }
+
+            win.document.write('</body></html>');
+            win.document.close();
+            win.focus();
+            win.print();
+            win.close();
+            }
+</script>
+
 </body>
