@@ -47,6 +47,10 @@ body {
     margin: 13px 0;
 }
 
+.input-box:first-of-type .input-field {
+    width: 100%;
+}
+
 .input-box .input-field input {
     width: 100%;
     height: 100%;
