@@ -57,7 +57,7 @@ $first = $items[0];
                     <span>User</span>
                 </button>
                 <div class="dropdown-content">
-                    <a href="adminupddetails.html">Update Details</a>
+                    <a href="adminupdate.php">Update Details</a>
                     <a href="adminlogin.html">Log out</a>
                 </div>
             </div>

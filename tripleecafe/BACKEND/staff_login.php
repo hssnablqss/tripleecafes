@@ -15,6 +15,8 @@ oci_execute($stid);
 $row = oci_fetch_array($stid, OCI_ASSOC);
 
 if ($row) {
+    session_start(); 
+    $_SESSION['emp_id'] = $row['EMP_ID'];
     header("Location: ../admin/adminhome.php");
     exit();
 } else {

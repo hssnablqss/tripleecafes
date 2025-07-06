@@ -87,7 +87,7 @@ while ($row = oci_fetch_assoc($stid)) {
                     <span>User</span>
                 </button>
                 <div class="dropdown-content">
-                    <a href="adminupddetails.html">Update Details</a>
+                    <a href="adminaupdate.php">Update Details</a>
                     <a href="adminlogin.html">Log out</a>
                 </div>
             </div>

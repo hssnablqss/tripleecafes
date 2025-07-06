@@ -21,7 +21,7 @@ while ($row = oci_fetch_assoc($stid)) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Your Details</title>
+    <title>Home</title>
     <link rel="stylesheet" href="css/adminhome.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -89,7 +89,7 @@ while ($row = oci_fetch_assoc($stid)) {
                     <span>User</span>
                 </button>
                 <div class="dropdown-content">
-                    <a href="adminupddetails.html">Update Details</a>
+                    <a href="adminupdate.php">Update Details</a>
                     <a href="adminlogin.html">Log out</a>
                 </div>
             </div>
@@ -150,3 +150,11 @@ while ($row = oci_fetch_assoc($stid)) {
     </script>
 </body>
 </html>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("success") === "updated") {
+        alert("Employee successfully updated!");
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  </script>

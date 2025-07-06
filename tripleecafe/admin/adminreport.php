@@ -30,7 +30,7 @@ while ($row = oci_fetch_assoc($stid)) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Update Your Details</title>
+    <title>Reports</title>
     <link rel="stylesheet" href="css/adminreport.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
     <style>
@@ -57,25 +57,25 @@ while ($row = oci_fetch_assoc($stid)) {
                     <span>User</span>
                 </button>
                 <div class="dropdown-content">
-                    <a href="adminupddetails.html">Update Details</a>
+                    <a href="adminupdate.php">Update Details</a>
                     <a href="adminlogin.html">Log out</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <div class="chart">
-            <canvas id="barchart" width="400" height="400"></canvas>
-            <div id="bar-summary" class="chart-summary"></div>
-            <button onclick="printChart('barchart')" class="print-btn">Print Bar Chart</button>
-        </div>
-
-        <div class="chart">
-            <canvas id="doughnut" width="450" height="450"></canvas>
-            <button onclick="printChart('doughnut')" class="print-btn">Print Doughnut Chart</button>
-        </div>
+<div class="container">
+    <div class="chart">
+        <h2 style="text-align: center;">Total Sales</h2>
+        <canvas id="barchart" width="400" height="400"></canvas>
+        <div id="bar-summary" class="chart-summary"></div>
     </div>
+
+    <div class="chart">
+        <h2 style="text-align: center;">Sales by Category</h2>
+        <canvas id="doughnut" width="450" height="450"></canvas>
+    </div>
+</div>
 
     <script>
         if (window.location.href.indexOf("adminupddetails.html") !== -1) {
