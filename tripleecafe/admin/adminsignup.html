@@ -13,27 +13,27 @@
 
 <body>
     <div class="wrapper">
-        <form action="">
+        <form action="../BACKEND/admin_signup.php" method="POST">
             <h1>Sign Up</h1>
 
             <div class="input-box">
                 <div class="input-field">
-                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" name="empname" id="empname" placeholder="Full Name" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-field">
-                    <input type="email" placeholder="Email" required>
+                    <input type="email" name="empemail" id="empemail" placeholder="Email" required>
                     <i class='bx bxs-envelope' ></i>
                 </div>
             </div>
 
             <div class="input-box">
                 <div class="input-field">
-                    <input type="number" placeholder="Phone Number" required>
+                    <input type="number" name="empphone" id="empphone" placeholder="Phone Number" required>
                     <i class='bx bxs-phone' ></i>
                 </div>
                 <div class="input-field">
-                    <input type="text" placeholder="Employee Role" required>
+                    <input type="text" name="emprole" id="emprole" placeholder="Employee Role" required>
                     <i class='bx bxs-briefcase'></i>
                 </div>
             </div>
@@ -42,13 +42,13 @@
                 <div class="input-field">
                     <label class="gender-label">Gender:</label>
                     <div class="gender-options">
-                        <label><input type="radio" name="gender" value="M" required> Male</label>
-                        <label><input type="radio" name="gender" value="F" required> Female</label>
+                        <label><input type="radio" name="empgender" id="gender_m" value="M" required> Male</label>
+                        <label><input type="radio" name="empgender" id="gender_f" value="F" required> Female</label>
                     </div>
                 </div>
                 <div class="input-field">
                     <label class="date-label">Hire Date:</label>
-                    <input type="date" required>
+                    <input type="date" name="emphiredate" id="emphiredate" required>
                     <i class='bx bxs-calendar'></i>
                 </div>
             </div>
@@ -56,24 +56,58 @@
 
             <div class="input-box">
                 <div class="input-field">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="emppassword" placeholder="Password" required>
                     <i class='bx bxs-lock-alt' ></i>
                 </div>
                 <div class="input-field">
-                    <input type="password" placeholder="Confirm Password" required>
+                    <input type="password" name="conpass" placeholder="Confirm Password" required>
                     <i class='bx bxs-lock-alt' ></i>
+                    <div id="password-error" style="color: red; font-size: 13px; margin-top: 5px; display: none;">
+                            Passwords do not match.
+                    </div>
                 </div>
             </div>
 
-            <label><input type="checkbox">I hereby declare that the above information
+            <label><input type="checkbox" name="declare" required>I hereby declare that the above information
                 provided is true and correct.</label>
-            
             <button type="submit" class="btn">Sign Up</button>
-
-
         </form>
     </div>
 
 </body>
-
 </html>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+
+    function getQueryParam(key) {
+        return params.get(key);
+    }
+
+const nameField = document.getElementById("empname");
+const emailField = document.getElementById("empemail");
+const phoneField = document.getElementById("empphone");
+const hiredateField = document.getElementById("emphiredate");
+const roleField = document.getElementById("emprole");
+
+const gender = getQueryParam("empgender");
+if (gender) {
+    const genderRadio = document.querySelector(`input[name="empgender"][value="${gender}"]`);
+    if (genderRadio) genderRadio.checked = true;
+}
+
+if (nameField) nameField.value = getQueryParam("empname") || "";
+if (emailField) emailField.value = getQueryParam("empemail") || "";
+if (phoneField) phoneField.value = getQueryParam("empphone") || "";
+if (hiredateField) hiredateField.value = getQueryParam("emphiredate") || "";
+if (roleField) roleField.value = getQueryParam("emprole") || "";
+//if (genderField) genderField.value = getQueryParam("empgender") || "";
+
+
+if (getQueryParam("error") === "password_mismatch") {
+    const errorDiv = document.getElementById("password-error");
+    if (errorDiv) {
+        errorDiv.style.display = "block";
+    }
+}
+</script>

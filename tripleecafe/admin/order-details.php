@@ -58,7 +58,7 @@ $first = $items[0];
                 </button>
                 <div class="dropdown-content">
                     <a href="adminupddetails.html">Update Details</a>
-                    <a href="adminmenu.html">Log out</a>
+                    <a href="adminlogin.html">Log out</a>
                 </div>
             </div>
         </div>
@@ -87,16 +87,12 @@ $first = $items[0];
             </ul>
 
             <div class="total-section">
-                <span>Status</span>
+                <span>Total Amount: </span>
                 <select class="status-dropdown">
                     <option value="preparing" <?= $first['ORDER_STATUS'] === 'preparing' ? 'selected' : '' ?>>Preparing</option>
                     <option value="finished" <?= $first['ORDER_STATUS'] === 'finished' ? 'selected' : '' ?>>Finished</option>
                     <option value="cancelled" <?= $first['ORDER_STATUS'] === 'cancelled' ? 'selected' : '' ?>>Cancelled</option>
                 </select>
-            </div>
-
-            <div class="save-btn-container">
-                <a href="adminhome.php" class="save-btn">Save</a>
             </div>
         </div>
     </div>

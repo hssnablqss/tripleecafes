@@ -48,6 +48,12 @@
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     </body>
-
-
     </html>
+
+    <script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("success") === "registered") {
+        alert("Employee successfully registered!");
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+</script>

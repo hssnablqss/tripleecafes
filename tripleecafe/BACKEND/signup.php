@@ -17,18 +17,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Optional: Hash password
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO CUSTOMERS (CUST_ID, CUST_NAME, CUST_PHONENUM, CUST_EMAIL, CUST_PASSWORD)
-            VALUES (CUST_SEQ.NEXTVAL, :name, :phone, :email, :password)";
+    $sql = "INSERT INTO EMPLOYEES (EMP_ID, EMP_NAME, EMP_PHONENUM, EMP_EMAIL, EMP_ROLE, EMP_HIREDATE, EMP_PASSWORD
+    ) VALUES (
+        EMP_SEQ.NEXTVAL, :empname, :empphone, :empemail, :emprole, TO_DATE(:emphiredate, 'YYYY-MM-DD'), :emppassword
+    )";
 
     $stid = oci_parse($conn, $sql);
 
     oci_bind_by_name($stid, ":name", $name);
     oci_bind_by_name($stid, ":phone", $phone);
     oci_bind_by_name($stid, ":email", $email);
-    oci_bind_by_name($stid, ":password", $hashedPassword);
+    oci_bind_by_name($stid, ":password", $password);
 
     $result = oci_execute($stid);
 
