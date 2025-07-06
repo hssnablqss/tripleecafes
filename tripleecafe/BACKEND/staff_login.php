@@ -1,8 +1,8 @@
 <?php
 require 'db_connect.php'; // connects to Oracle
 
-$email = $_POST['email'] ?? 'staff@example.com';
-$password = $_POST['password'] ?? 'staffpass';
+$email = $_POST['email'];
+$password = $_POST['password'];
 
 $sql = "SELECT * FROM EMPLOYEES WHERE EMP_EMAIL = :u AND EMP_PASSWORD = :p";
 
@@ -15,7 +15,7 @@ oci_execute($stid);
 $row = oci_fetch_array($stid, OCI_ASSOC);
 
 if ($row) {
-    header("Location: ../adminhome.html");
+    header("Location: ../admin/adminhome.html");
     exit();
 } else {
     echo "❌ Invalid username or password.";
