@@ -48,7 +48,7 @@ $first = $items[0];
             <img src="./img/LogoP1.png" alt="Logo" class="logo" />
             <a href="adminhome.php">Home</a>
             <a href="adminmenu.html" class="active">Menu</a>
-            <a href="adminreport.html">Report</a>
+            <a href="adminreport.php">Report</a>
         </div>
         <div class="nav-right">
             <div class="icon-button">

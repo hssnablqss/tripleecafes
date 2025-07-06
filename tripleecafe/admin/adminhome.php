@@ -80,7 +80,7 @@ while ($row = oci_fetch_assoc($stid)) {
             <img src="./img/LogoP1.png" alt="Logo" class="logo" />
             <a href="adminhome.php" class="active">Home</a>
             <a href="adminmenu.php">Menu</a>
-            <a href="adminreport.html">Report</a>
+            <a href="adminreport.php">Report</a>
         </div>
         <div class="nav-right">
             <div class="icon-button">
