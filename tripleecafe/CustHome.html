@@ -28,7 +28,7 @@
             <span>User</span>
           </button>
           <div class="dropdown-content">
-            <a href="update.html">Update Details</a>
+            <a href="update.php">Update Details</a>
             <a href="login.html">Log out</a>
           </div>
         </div>
@@ -276,6 +276,13 @@
         }
 
     </script>
-
   </body>
 </html>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("success") === "updated") {
+        alert("Customer successfully updated!");
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  </script>

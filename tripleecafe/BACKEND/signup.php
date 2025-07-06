@@ -18,10 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    $sql = "INSERT INTO EMPLOYEES (EMP_ID, EMP_NAME, EMP_PHONENUM, EMP_EMAIL, EMP_ROLE, EMP_HIREDATE, EMP_PASSWORD
-    ) VALUES (
-        EMP_SEQ.NEXTVAL, :empname, :empphone, :empemail, :emprole, TO_DATE(:emphiredate, 'YYYY-MM-DD'), :emppassword
-    )";
+    $sql = "INSERT INTO CUSTOMERS (CUST_ID, CUST_NAME, CUST_PHONENUM, CUST_EMAIL, CUST_PASSWORD)
+            VALUES (EMP_SEQ.NEXTVAL, :name, :phone, :email, :password)";
 
     $stid = oci_parse($conn, $sql);
 

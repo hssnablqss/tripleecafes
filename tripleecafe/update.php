@@ -1,3 +1,76 @@
+<?php
+session_start();
+require 'BACKEND/db_connect.php';
+$custID = $_SESSION['cust_id']; 
+
+if (!isset($_SESSION['cust_id'])) {
+    echo "You must be logged in.";
+    exit;
+}
+
+$custID = $_SESSION['cust_id'];
+
+$sql = "SELECT CUST_NAME, CUST_EMAIL, CUST_PHONENUM FROM CUSTOMERS WHERE CUST_ID = :id";
+$stmt = oci_parse($conn, $sql);
+oci_bind_by_name($stmt, ":id", $custID);
+oci_execute($stmt);
+
+$row = oci_fetch_assoc($stmt);
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['fullname'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $password = $_POST['password'];
+    $confirm = $_POST['conpass'];
+
+    if ($password !== $confirm) {
+        $name = urlencode($name);
+        $email = urlencode($email);
+        $phone = urlencode($phone);
+        header("Location: update.php?error=password_mismatch&name=$name&email=$email&phone=$phone");
+        exit;
+    }
+
+    // Determine the SQL and bind accordingly
+    if (!empty($password)) {
+        $sql = "UPDATE CUSTOMERS
+                SET CUST_NAME = :name,
+                    CUST_EMAIL = :email,
+                    CUST_PHONENUM = :phone,
+                    CUST_PASSWORD = :password
+                WHERE CUST_ID = :id";
+        $stmt = oci_parse($conn, $sql);
+        oci_bind_by_name($stmt, ":password", $password);
+    } else {
+        $sql = "UPDATE CUSTOMERS
+                SET CUST_NAME = :name,
+                    CUST_EMAIL = :email,
+                    CUST_PHONENUM = :phone
+                WHERE CUST_ID = :id";
+        $stmt = oci_parse($conn, $sql);
+    }
+
+    // Common bindings
+    oci_bind_by_name($stmt, ":name", $name);
+    oci_bind_by_name($stmt, ":email", $email);
+    oci_bind_by_name($stmt, ":phone", $phone);
+    oci_bind_by_name($stmt, ":id", $custID);
+
+    if (oci_execute($stmt)) {
+        header("Location: CustHome.html?success=updated");
+        exit;
+    } else {
+        $e = oci_error($stmt);
+        echo "Update failed: " . $e['message'];
+    }
+
+    oci_free_statement($stmt);
+    oci_close($conn);
+}
+?>
+
 <!DOCTYPE html>
     <html lang="en">
 
@@ -45,35 +118,38 @@
 
             <!-- UPDATE FORM -->
             <div class="wrapper">
-                <form action="BACKEND/update.php" method="POST">
+                <form method="POST">
                     <h1>Update Details</h1>
 
                     <div class="input-box">
                         <div class="input-field">
-                            <input type="text" name="fullname" placeholder="Full Name" required>
+                            <input type="text" name="fullname" value="<?= $row['CUST_NAME'] ?? '' ?>" required>
                             <i class='bx bxs-user'></i>
                         </div>
                     </div>
 
                     <div class="input-box">
                         <div class="input-field">
-                            <input type="email" name="email" placeholder="Email" required>
+                            <input type="email" name="email" value="<?= $row['CUST_EMAIL'] ?? '' ?>" required>
                             <i class='bx bxs-envelope'></i>
                         </div>
                         <div class="input-field">
-                            <input type="number" name="phone" placeholder="Phone Number" required>
+                            <input type="number" name="phone" value="<?= $row['CUST_PHONENUM'] ?? '' ?>" required>
                             <i class='bx bxs-phone'></i>
                         </div>
                     </div>
 
                     <div class="input-box">
                         <div class="input-field">
-                            <input type="password" name="password" placeholder="Password" required>
+                            <input type="password" name="password" placeholder="New Password">
                             <i class='bx bxs-lock-alt'></i>
                         </div>
                         <div class="input-field">
-                            <input type="password" name="conpass" placeholder="Confirm Password" required>
+                            <input type="password" name="conpass" placeholder="Confirm Password">
                             <i class='bx bxs-lock-alt'></i>
+                            <div id="password-error" style="color: red; font-size: 13px; margin-top: 5px; display: none;">
+                                Passwords do not match.
+                            </div>
                         </div>
                     </div>
 
@@ -113,7 +189,7 @@
                 </footer>
             <script>
                 // Check if the current page is the Cart page
-                if (window.location.href.indexOf("update.html") !== -1) {
+                if (window.location.href.indexOf("update.php") !== -1) {
                     // Add active class to Cart link
                     document.getElementById("user-link").classList.add("active");
                 }
@@ -132,18 +208,12 @@
         </body>
     </html>
 
-    <script>
-fetch('BACKEND/get_customer.php')
-  .then(response => response.json())
-  .then(data => {
-    if (data.error) {
-      alert(data.error);
-    } else {
-      document.querySelector('input[name="custname"]').value = data.CUST_NAME;
-      document.querySelector('input[name="custusername"]').value = data.CUST_USERNAME;
-      document.querySelector('input[name="custemail"]').value = data.CUST_EMAIL;
-      document.querySelector('input[name="custphone"]').value = data.CUST_PHONENUM;
+<script>
+const params = new URLSearchParams(window.location.search);
+if (params.get("error") === "password_mismatch") {
+    const errorDiv = document.getElementById("password-error");
+    if (errorDiv) {
+        errorDiv.style.display = "block";
     }
-  });
+}
 </script>
-
