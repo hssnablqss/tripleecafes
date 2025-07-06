@@ -21,7 +21,7 @@ $row = oci_fetch_array($stid, OCI_ASSOC);
 if ($row) {
     session_start(); 
     $_SESSION['cust_id'] = $row['CUST_ID']; // Save CUST_ID 
-    header("Location: ../CustHome.html");
+    header("Location: ../CustHome.php");
     exit();
 
 } else {
