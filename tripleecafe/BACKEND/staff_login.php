@@ -15,7 +15,7 @@ oci_execute($stid);
 $row = oci_fetch_array($stid, OCI_ASSOC);
 
 if ($row) {
-    header("Location: ../admin/adminhome.html");
+    header("Location: ../admin/adminhome.php");
     exit();
 } else {
     echo "❌ Invalid username or password.";
