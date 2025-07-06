@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <span>User</span>
                         </button>
                         <div class="dropdown-content">
-                            <a href="UpdateDetails.html">Update Details</a>
+                            <a href="update.php">Update Details</a>
                             <a href="CustHome.html">Log out</a>
                         </div>
                     </div>
@@ -154,9 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
 
                     <label><input type="checkbox" required>I hereby declare that the above information is true and correct.</label>
-
                     <button type="submit" class="btn">Update Details</button>
-                    <button type="submit" class="delbtn">Delete Acount</button>
                 </form>
             </div>
                 <footer>

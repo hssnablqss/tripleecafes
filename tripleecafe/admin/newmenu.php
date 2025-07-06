@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </button>
                 <div class="dropdown-content">
                     <a href="adminupdate.php">Update Details</a>
-                    <a href="adminhome.php">Log out</a>
+                    <a href="adminlogin.html">Log out</a>
                 </div>
             </div>
         </div>

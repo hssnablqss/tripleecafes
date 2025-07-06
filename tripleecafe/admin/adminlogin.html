@@ -56,4 +56,8 @@
         alert("Employee successfully registered!");
         window.history.replaceState({}, document.title, window.location.pathname);
     }
+    else if (params.get("success") === "deleted") {
+        alert("Employee data have been deleted!");
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
 </script>

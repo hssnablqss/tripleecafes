@@ -13,6 +13,9 @@ $sql = "SELECT o.order_id, o.order_status, TO_CHAR(o.order_date, 'Month DD, YYYY
         JOIN menu m on d.menu_id = m.menu_id
         WHERE o.order_id = :oid";
 
+
+$sql = "SELECT ORDER_TOTAL FROM ORDERS";
+
 $stid = oci_parse($conn, $sql);
 oci_bind_by_name($stid, ":oid", $order_id);
 oci_execute($stid);
