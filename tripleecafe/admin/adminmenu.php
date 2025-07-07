@@ -1,3 +1,4 @@
+
 <?php
 // Connect to Oracle
 require '../BACKEND/db_connect.php'; // Adjust path if needed
@@ -177,3 +178,11 @@ while ($row = oci_fetch_assoc($stid)) {
     </script>
 </body>
 </html>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("success") === "updated") {
+        alert("Menu successfully updated!");
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  </script> 
