@@ -10,7 +10,7 @@ while ($row = oci_fetch_assoc($stid)) {
     $menus[] = $row;
 }
 
-// Dynamically group menu items by their category
+// Group menus by category
 $grouped = [];
 foreach ($menus as $menu) {
     $category = ucfirst(strtolower($menu['MENU_CATEGORY']));
@@ -29,15 +29,19 @@ foreach ($menus as $menu) {
     <title>Menu</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/CustIndex.css" />
+    <style>
+        .hidden-item {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-<!-- 🔝 Top Navigation -->
 <div class="topnav">
     <div class="nav-left">
         <img src="./img/LogoP1.png" alt="Logo" class="logo" />
         <a href="CustHome.php" class="active">Home</a>
-        <a href="Order.html">Order Status</a>
+        <a href="Order.php">Order Status</a>
     </div>
     <div class="nav-right">
         <a href="cart.html" class="icon-button" id="cart-link">
@@ -64,8 +68,8 @@ foreach ($menus as $menu) {
         <div class="menu-section">
             <h3><?= htmlspecialchars($category) ?></h3>
             <div class="menu-grid" id="<?= strtolower($category) ?>">
-                <?php foreach ($items as $item): ?>
-                    <div class="menu-item">
+                <?php foreach ($items as $index => $item): ?>
+                    <div class="menu-item <?= $index >= 3 ? 'hidden-item' : '' ?>">
                         <img src="./img/food3.png">
                         <h4><?= htmlspecialchars($item['MENU_NAME']) ?></h4>
                         <p><?= htmlspecialchars($item['MENU_DESC']) ?></p>
@@ -83,7 +87,6 @@ foreach ($menus as $menu) {
     <?php endforeach; ?>
 </div>
 
-<!-- Footer -->
 <footer>
     <div class="footer-container">
         <div class="footer-content">
@@ -113,7 +116,6 @@ foreach ($menus as $menu) {
     </div>
 </footer>
 
-<!-- JS -->
 <script>
 function toggleItems(sectionId) {
     const section = document.getElementById(sectionId);

@@ -96,9 +96,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="topnav">
         <div class="nav-left">
             <img src="./img/LogoP1.png" alt="Logo" class="logo" />
-            <a href="adminhome.html">Home</a>
-            <a href="adminmenu.html">Menu</a>
-            <a href="adminreport.html">Report</a>
+            <a href="adminhome.php">Home</a>
+            <a href="adminmenu.php">Menu</a>
+            <a href="adminreport.php">Report</a>
 
         </div>
         <div class="nav-right">
