@@ -155,7 +155,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label><input type="checkbox">I hereby declare that the above information is true and correct.</label>
 
             <button type="submit" class="btn">Update Details</button>
-            <button type="submit" class="delbtn">Delete Acount</button>
         </form>
     </div>
 
