@@ -8,17 +8,17 @@ if (!$order_id) {
 }
 
 $sql = "SELECT o.order_id, o.order_status, TO_CHAR(o.order_date, 'Month DD, YYYY') as order_date,
-               TO_CHAR(o.order_time, 'HH24:MI') as order_time, m.menu_name, d.unit_price, d.order_quantity
-        FROM orders o JOIN order_details d ON o.order_id = d.order_id
-        JOIN menu m on d.menu_id = m.menu_id
+               TO_CHAR(o.order_time, 'HH24:MI') as order_time, o.order_total,
+               m.menu_name, d.unit_price, d.order_quantity
+        FROM orders o
+        JOIN order_details d ON o.order_id = d.order_id
+        JOIN menu m ON d.menu_id = m.menu_id
         WHERE o.order_id = :oid";
-
-
-$sql = "SELECT ORDER_TOTAL FROM ORDERS";
 
 $stid = oci_parse($conn, $sql);
 oci_bind_by_name($stid, ":oid", $order_id);
 oci_execute($stid);
+
 
 $items = [];
 while ($row = oci_fetch_assoc($stid)) {
@@ -90,12 +90,7 @@ $first = $items[0];
             </ul>
 
             <div class="total-section">
-                <span>Total Amount: </span>
-                <select class="status-dropdown">
-                    <option value="preparing" <?= $first['ORDER_STATUS'] === 'preparing' ? 'selected' : '' ?>>Preparing</option>
-                    <option value="finished" <?= $first['ORDER_STATUS'] === 'finished' ? 'selected' : '' ?>>Finished</option>
-                    <option value="cancelled" <?= $first['ORDER_STATUS'] === 'cancelled' ? 'selected' : '' ?>>Cancelled</option>
-                </select>
+                <span><strong>Total Amount:</strong> RM <?= number_format($first['ORDER_TOTAL'], 2) ?></span>
             </div>
         </div>
     </div>
